@@ -287,7 +287,7 @@ def dibujar_puntajes(): # Miguel Ángel
 # -------------------------------
 # Manejo de eventos 
 # -------------------------------
-def actualizar_usuario(evento):
+def actualizar_usuario(evento): # Daniel Rodríguez Pérez
     """Maneja la entrada de nombre de usuario."""
     global usuario, texto_entrada, estado
     if evento.type == pygame.KEYDOWN:
@@ -304,14 +304,14 @@ def actualizar_usuario(evento):
             if len(texto_entrada)<16:
                 texto_entrada += evento.unicode
 
-def iniciar_espera():
+def iniciar_espera(): # Daniel Rodríguez Pérez
     """Inicia la espera aleatoria antes de reaccionar."""
     global retraso_espera, inicio_retraso, estado
     retraso_espera = random.uniform(dificultad_actual.retraso_min, dificultad_actual.retraso_max)
     inicio_retraso = time.time()
     estado = EstadoJuego.ESPERANDO
 
-def actualizar_menu(evento):
+def actualizar_menu(evento): # Daniel Rodríguez Pérez
     """Maneja eventos en el menú principal."""
     global estado, mensaje, texto_entrada
     if evento.type == pygame.MOUSEBUTTONDOWN and evento.button == 1:
@@ -337,7 +337,7 @@ def actualizar_menu(evento):
         pygame.quit()
         exit()
 
-def actualizar_esperando(evento):
+def actualizar_esperando(evento): # Daniel Rodríguez Pérez
     """Maneja eventos mientras se espera el inicio de la reacción."""
     global estado, mensaje
     if evento.type == pygame.MOUSEBUTTONDOWN:
@@ -347,7 +347,7 @@ def actualizar_esperando(evento):
         pygame.quit()
         exit()
 
-def actualizar_click(evento):
+def actualizar_click(evento): # Daniel Rodríguez Pérez
     """Maneja eventos cuando se espera el clic de reacción."""
     global tiempo_fin, estado, mensaje
     if evento.type == pygame.MOUSEBUTTONDOWN:
@@ -362,7 +362,7 @@ def actualizar_click(evento):
         pygame.quit()
         exit()
 
-def actualizar_resultado(evento):
+def actualizar_resultado(evento): # Daniel Rodríguez Pérez
     """Maneja eventos en la pantalla de resultados."""
     global estado
     if evento.type == pygame.MOUSEBUTTONDOWN or (evento.type == pygame.KEYDOWN and evento.key == pygame.K_SPACE):
@@ -371,7 +371,7 @@ def actualizar_resultado(evento):
         pygame.quit()
         exit()
 
-def actualizar_puntajes(evento):
+def actualizar_puntajes(evento): # Daniel Rodríguez Pérez
     """Maneja eventos en la pantalla de puntuaciones."""
     global estado, scroll_y
     if evento.type == pygame.MOUSEBUTTONDOWN:
